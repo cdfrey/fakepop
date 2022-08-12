@@ -1,7 +1,7 @@
 Source: fakepop
 Section: mail
 Priority: extra
-Maintainer: Pedro Zorzenon Neto <pzn@debian.org>
+Maintainer: Chris Frey <cdfrey@foursquare.net>
 Build-Depends: debhelper (>= 4.0.0), pkg-config, libglib2.0-dev
 Standards-Version: 3.6.1
 

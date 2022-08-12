@@ -1,3 +1,9 @@
+fakepop (8) unstable; urgency=low
+
+  * Bug fixes and very slight modernizing
+
+ -- Chris Frey <cdfrey@foursquare.net>  Fri, 12 Aug 2022 04:05:31 -0400
+
 fakepop (7) unstable; urgency=low
 
   * Initial Release.
