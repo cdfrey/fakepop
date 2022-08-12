@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-	update-inetd --remove '^pop-3[[:blank:]]'
+	test -x update-inetd && update-inetd --remove '^pop-3[[:blank:]]'
         ;;
     failed-upgrade)
         ;;

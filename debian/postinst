@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     configure)
-	update-inetd --group MAIL --add 'pop-3\t\tstream\ttcp\tnowait\tnobody\t/usr/sbin/tcpd\t/usr/sbin/in.fakepop'
+	test -x update-inetd && update-inetd --group MAIL --add 'pop-3\t\tstream\ttcp\tnowait\tnobody\t/usr/sbin/tcpd\t/usr/sbin/in.fakepop'
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

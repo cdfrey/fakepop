@@ -7,6 +7,7 @@ Standards-Version: 3.6.1
 
 Package: fakepop
 Architecture: any
+Suggests: update-inetd
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: fake pop3 daemon. delivers same messages to all users
  fakepop is a fake pop3 daemon. It returns always the same messages
