@@ -33,3 +33,5 @@ Check message examples at README.example*
 Assure that files under /etc/fakepop can be read by the user that runs
 fakepop (usually nobody)
 
+See xinetd/fakepop for an example xinetd configuration.
+

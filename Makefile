@@ -20,12 +20,14 @@ dirs:
 	install -d -o root -g root -m 0755 $(DESTDIR)/usr/sbin
 	install -d -o root -g root -m 0755 $(DESTDIR)/usr/share/man/man8
 	install -d -o root -g root -m 0755 $(DESTDIR)/usr/share/doc/fakepop/examples
+	install -d -o root -g root -m 0755 $(DESTDIR)/usr/share/doc/fakepop/examples/xinetd
 
 install: all dirs
 	install -o root -g root -m 0755 fakepop $(DESTDIR)/usr/sbin/in.fakepop
 	set -e; for i in README.*; do \
 	  install -o root -g root -m 0644 $$i $(DESTDIR)/usr/share/doc/fakepop/examples; \
 	done
+	install -o root -g root -m 0644 xinetd/fakepop $(DESTDIR)/usr/share/doc/fakepop/examples/xinetd
 	umask 022; echo "Please read /usr/share/doc/fakepop/examples/README.config for configuration instructions." > $(DESTDIR)/etc/fakepop/README
 	install -o root -g root -m 0644 COPYRIGHT $(DESTDIR)/usr/share/doc/fakepop/copyright
 	install -o root -g root -m 0644 in.fakepop.8 $(DESTDIR)/usr/share/man/man8

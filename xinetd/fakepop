@@ -1,0 +1,18 @@
+# description: Fake pop3 service
+# This is the tcp version.
+service pop3
+{
+	disable		= no
+	id		= fakepop
+	socket_type	= stream
+	protocol	= tcp
+	port		= 110
+	user		= nobody
+	wait		= no
+	instances	= 10
+	server		= /usr/sbin/in.fakepop
+	log_type	= SYSLOG mail info
+	log_on_success	= HOST EXIT DURATION
+	log_on_failure	= HOST ATTEMPT
+}
+
