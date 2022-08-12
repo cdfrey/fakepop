@@ -2,13 +2,13 @@
 
 GLIB_CFLAGS  = $(shell pkg-config --cflags glib-2.0)
 GLIB_LDFLAGS = $(shell pkg-config --libs glib-2.0)
-CFLAGS       = -D_GNU_SOURCE -Wall -O2 $(GLIB_CFLAGS)
+CFLAGS       = -D_GNU_SOURCE -Wall -Wextra -Werror -O2 $(GLIB_CFLAGS)
 LDFLAGS      = $(GLIB_LDFLAGS)
 
 all: fakepop
 
 clean:
-	rm -f *.o *~
+	rm -f *.o *~ fakepop
 
 distclean: clean
 	rm -f fakepop install.tgz fakepop-src.tgz
