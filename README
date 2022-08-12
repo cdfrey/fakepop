@@ -1,0 +1,35 @@
+FAKEPOP
+
+fakepop is a fake pop3 daemon. It returns always the same messages to
+all users, it does not care about usernames and passwords. All
+user/pass combinations are accepted.
+
+It is currently run from an inetd-style service daemon.  Choose
+openbsd-inetd or xinetd or the flavour of your choice.
+
+The main purpose of fakepop is to advise users that your server only
+accepts pop3-ssl and they have wrongly configured pop3 without
+ssl. You can customize messages in /etc/fakepop/ directory to teach
+your users how they should configure their mail clients to use
+pop3-ssl instead of pop3.
+
+You can put all the messages you want to deliver to the users that
+connect at fakepop in /etc/fakepop/ for more information see
+/usr/fakepop/readme.config
+
+
+CONFIGURATION
+
+To configure fakepop, put all messages that you want fakepop
+to deliver in the /etc/fakepop/ directory.  Zero messages is allowed.
+
+Some filenames are not considered as messages:
+  - filenames begining with '.' (hidden files)
+  - filenames begining with 'readme' (case insensitive)
+  - filenames ending in '~' (backup files)
+
+Check message examples at README.example*
+
+Assure that files under /etc/fakepop can be read by the user that runs
+fakepop (usually nobody)
+
