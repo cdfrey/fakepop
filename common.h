@@ -3,8 +3,8 @@
 #ifndef _common_h
 #define _common_h
 
-#define PROGRAM_VERSION "7"
-#define URL "http://vztech.com.br/software/fakepop/"
+#define PROGRAM_VERSION "8"
+#define URL "https://github.com/cdfrey/fakepop"
 
 #define MSG_MAX_LINE_SIZE 4100
 #define MSGDIR "/etc/fakepop/" /* MSGDIR must end with a slash */
