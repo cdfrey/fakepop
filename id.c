@@ -19,20 +19,23 @@ void rnd_init (int init_value) {
   srand(rnd_base + init_value);
 }
 
-void id_get_msgid (int n, char * msgid) {
-  int i;
+void id_get_msgid (int n, char * msgid, size_t len) {
+  size_t i;
   rnd_init(n);
-  for (i=0; i<20; i++) {
+  for (i=0; i<20 && i<len; i++) {
     msgid[i] = id_char[(int) (62.0*rand()/(RAND_MAX+1.0))];
   }
-  msgid[i] = 0;
+  if (len)
+    msgid[i] = 0;
 }
 
-void id_get_uidl (int n, char * uidl) {
-  int i;
+void id_get_uidl (int n, char * uidl, size_t len) {
+  size_t i;
   rnd_init(n ^ 0xabcd);
-  for (i=0; i<20; i++) {
+  for (i=0; i<20 && i<len; i++) {
     uidl[i] = id_char[(int) (62.0*rand()/(RAND_MAX+1.0))];
   }
-  uidl[i] = 0;
+  if (len)
+    uidl[i] = 0;
 }
+

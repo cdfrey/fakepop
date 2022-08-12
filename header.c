@@ -34,8 +34,8 @@ char * header_create (int uid, int refresh_date) {
     strftime(date, DATE_MAXSIZE - 1, "%a, %d %b %Y %H:%M:%S %z", t);
   }
 
-  id_get_msgid (uid, msg_id);
-  id_get_uidl (uid, uidl);
+  id_get_msgid (uid, msg_id, sizeof(msg_id));
+  id_get_uidl (uid, uidl, sizeof(uidl));
   
   self = malloc(HEADER_MAXSIZE);
   assert (self != NULL);

@@ -62,7 +62,7 @@ int process_cmd (char * cmd) {
     if (strlen(cmd) > 5) {
       /* single message uidl */
       i = atoi(cmd+5);
-      id_get_uidl (i, s);
+      id_get_uidl (i, s, sizeof(s));
       printf("+OK %d %s\r\n",i,s);
     } else {
       /* all messages uidl */
@@ -70,7 +70,7 @@ int process_cmd (char * cmd) {
       j = msg_gettotalmsgs();
       printf("+OK\r\n");
       for (i = 1; i <= j; i++) {
-	id_get_uidl (i, s);
+	id_get_uidl (i, s, sizeof(s));
 	printf("%d %s\r\n",i,s);
       }
       printf(".\r\n");

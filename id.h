@@ -3,7 +3,7 @@
 #ifndef _id_h
 #define _id_h
 
-void id_get_msgid (int i, char * msgid);
-void id_get_uidl (int i, char * uidl);
+void id_get_msgid (int i, char * msgid, size_t len);
+void id_get_uidl (int i, char * uidl, size_t len);
 
 #endif
