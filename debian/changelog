@@ -1,0 +1,6 @@
+fakepop (7) unstable; urgency=low
+
+  * Initial Release.
+  * First package upload, closing ITP. (closes: #283751)
+
+ -- Pedro Zorzenon Neto <pzn@debian.org>  Wed,  1 Dec 2004 15:26:45 -0200

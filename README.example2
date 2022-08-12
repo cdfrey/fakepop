@@ -1,0 +1,25 @@
+System Administrator <nobody@nowhere.invalid>
+Subject: example message - with attachment
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="qDbXVdCdHGoSgWSk"
+Content-Disposition: inline
+
+
+--qDbXVdCdHGoSgWSk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+This is a simple message with one attached file.
+
+--qDbXVdCdHGoSgWSk
+Content-Type: image/png
+Content-Disposition: attachment; filename="green.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAGFBMVEUAAAAAPwAAQAAAfwAA
+gAAAvwAAwAAA/wAzKRFfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1AseEwQI9rq1
+OwAAAEZJREFUKBVjYHItRwEMjGYo/HIGJlM0AUZ0LRhmECFAhqEYDiPsDnRbMPyCIYDpOQwz
+CLuDGlrQPceIbiimSwk7jLAKNFsALXrYId7wvhwAAAAASUVORK5CYII=
+
+--qDbXVdCdHGoSgWSk--
+

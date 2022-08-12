@@ -1,0 +1,9 @@
+From: System Administrator <nobody@nowhere.invalid>
+Subject: example message - text only
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+This is a simple message.
+It contains only text.
+

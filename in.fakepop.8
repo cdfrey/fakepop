@@ -1,0 +1,36 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.TH FAKEPOP 8 "2004 Dec 01"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+fakepop \- a fake pop3 daemon
+.SH SYNOPSIS
+.B /usr/sbin/in.fakepop
+.SH DESCRIPTION
+fakepop is a fake pop3 daemon. It returns always the same messages to
+all users, it does not care about usernames and passwords. All
+user/pass combinations are accepted.
+.br
+The main purpose of fakepop is to advice users that your server only
+accepts pop3-ssl and they have wrongly configured pop3 without
+ssl. You can customize messages in /etc/fakepop/ directory to teach
+your users how they should configure their mail clients to use
+pop3-ssl instead of pop3.
+.SH OPTIONS
+This program discards any command line option.
+.SH CONFIGURATION
+You can put all the messages you want to deliver to the users that
+connect at fakepop in /etc/fakepop/ for more information see
+/usr/fakepop/readme.config
+.SH AUTHOR
+fakepop was written by Pedro Zorzenon Neto <pzn@debian.org>.

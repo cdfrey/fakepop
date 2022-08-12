@@ -1,0 +1,20 @@
+--- Instructions ---
+
+Easy way: if you use Debian, just install package "fakepop" :-)
+
+
+fakepop runs with inetd, xinetd or other superdaemon tools.
+Instructions come with inetd configuration. Please adapt to other
+superdaemon if you do not use inetd.
+
+(as a regular user)
+    make
+(as root)
+    make install DESTDIR=/
+
+add the following line to /etc/inetd.conf
+pop-3 stream tcp nowait nobody /usr/sbin/tcpd /usr/sbin/in.fakepop
+
+remember to restart inetd
+
+configuration instructions are in /etc/fakepop/README
