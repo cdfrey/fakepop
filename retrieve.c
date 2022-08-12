@@ -25,7 +25,8 @@ void retrieve_partial (int msg, FILE * out, int bodylines) {
   if (fh == NULL) return;
 
   msgline = malloc (MSG_MAX_LINE_SIZE + 1);
-  assert (msgline != NULL);
+  if (msgline == NULL)
+    return;
 
   header = header_create (msg, 0);
   fprintf (out, "%s", header);

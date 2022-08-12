@@ -50,7 +50,8 @@ static int msg_calc_size(char * msgfilename) {
   if (fh == NULL) return 0;
 
   msgline = malloc (MSG_MAX_LINE_SIZE + 1);
-  assert (msgline != NULL);
+  if (msgline == NULL)
+    return 0;
 
   while (fgets(msgline,MSG_MAX_LINE_SIZE,fh) != NULL) {
     msgline[MSG_MAX_LINE_SIZE] = 0;
@@ -88,7 +89,8 @@ void msg_init (void) {
   msg_counter = 0;
   msg_totalsize = 0;
   dp = opendir (MSGDIR);
-  assert(dp != NULL);
+  if (dp == NULL)
+    return;
   while ((ep = readdir (dp))) {
     if ((ep->d_type == DT_REG) || (ep->d_type == DT_LNK)) {
       if (msg_check_name(ep->d_name)) {
