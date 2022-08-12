@@ -119,9 +119,11 @@ int msg_gettotalmsgs (void) {
 
 /* return the size of a message */
 int msg_getsize (int msg) {
+  gpointer size_item;
   if (! msg_exist(msg))
     return 0;
-  return (int) g_slist_nth_data (msg_size, msg - 1);
+  size_item = g_slist_nth_data (msg_size, msg - 1);
+  return GPOINTER_TO_INT(size_item);
 }
 
 /* return the filename of a message */
