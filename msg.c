@@ -119,14 +119,14 @@ int msg_gettotalmsgs (void) {
 
 /* return the size of a message */
 int msg_getsize (int msg) {
-  if (! msg_exist)
+  if (! msg_exist(msg))
     return 0;
   return (int) g_slist_nth_data (msg_size, msg - 1);
 }
 
 /* return the filename of a message */
 char * msg_getfilename (int msg) {
-  if (! msg_exist)
+  if (! msg_exist(msg))
     return NULL;
   return g_slist_nth_data(msg_filename, msg - 1);
 }
