@@ -15,7 +15,7 @@
 void retrieve_partial (int msg, FILE * out, int bodylines) {
   FILE * fh;
   char * filename;
-  int i, j, linecount = 0, bodyflag = 0;
+  int j, linecount = 0, bodyflag = 0;
   char * header;
   char * msgline;
 
@@ -35,12 +35,9 @@ void retrieve_partial (int msg, FILE * out, int bodylines) {
   while (fgets(msgline,MSG_MAX_LINE_SIZE,fh) != NULL) {
     msgline[MSG_MAX_LINE_SIZE] = 0;
     j = strlen(msgline);
-    if (j < 2) j = 2;
-    for (i = j-2; i < j; i++) {
-      if ((msgline[i] == '\r') || (msgline[i] == '\n'))  {
-	msgline[i] = 0;
-	break;
-      }
+    while (j && (msgline[j-1] == '\r' || msgline[j-1] == '\n')) {
+      j--;
+      msgline[j] = 0;
     }
     if (msgline[0] == '.') {
       fputc('.',out);
@@ -61,3 +58,4 @@ void retrieve_partial (int msg, FILE * out, int bodylines) {
   fclose (fh);
   free (msgline);
 }
+

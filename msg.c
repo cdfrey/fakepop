@@ -42,7 +42,7 @@ static int msg_calc_size(char * msgfilename) {
   FILE * fh;
   char * filename;
   char * msgline;
-  int i, j, size = 0;
+  int j, size = 0;
 
   asprintf (&filename, "%s%s", MSGDIR, msgfilename);
   fh = fopen (filename,"r");
@@ -56,12 +56,9 @@ static int msg_calc_size(char * msgfilename) {
   while (fgets(msgline,MSG_MAX_LINE_SIZE,fh) != NULL) {
     msgline[MSG_MAX_LINE_SIZE] = 0;
     j = strlen(msgline);
-    if (j < 2) j = 2;
-    for (i = j-2; i < j; i++) {
-      if ((msgline[i] == '\r') || (msgline[i] == '\n'))  {
-	msgline[i] = 0;
-	break;
-      }
+    while (j && (msgline[j-1] == '\r' || msgline[j-1] == '\n')) {
+      j--;
+      msgline[j] = 0;
     }
     size += strlen(msgline) + 2; /* 2 is strlen("\r\n") */
   }
@@ -138,3 +135,4 @@ char * msg_getfilename (int msg) {
 int msg_gettotalsize (void) {
   return msg_totalsize;
 }
+
