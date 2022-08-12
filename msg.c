@@ -1,7 +1,7 @@
 /* $Id: msg.c,v 1.2 2004/11/30 21:26:37 pzn Exp $ */
 
 #include <string.h>
-#include <glib/gslist.h>
+#include <glib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
