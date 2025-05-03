@@ -1,8 +1,10 @@
 fakepop (9) unstable; urgency=low
 
   * Added a 10 minute timeout to inactive connections
+  * Makefile: fixed linker order so LDFLAGS comes last
+  * Bumped debian/compat from 5 to 10
 
- -- Chris Frey <cdfrey@foursquare.net>  Fri, 02 May 2025 22:48:25 -0400
+ -- Chris Frey <cdfrey@foursquare.net>  Fri, 03 May 2025 08:07:45 -0400
 
 fakepop (8) unstable; urgency=low
 
