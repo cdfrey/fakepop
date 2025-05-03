@@ -12,6 +12,8 @@
 #include "retrieve.h"
 #include "common.h"
 
+#define READ_TIMEOUT_SEC 10*60		/* 10 minutes */
+
 /* process a POP3 command. return 0 if command is "quit" */
 int process_cmd (char * cmd) {
   int ret = 1;
@@ -126,7 +128,7 @@ int main (void) {
 	  PROGRAM_VERSION, URL);
   fflush(stdout);
 
-  while ((running == 1) && (fgets(cmd, CMD_MAX_SIZE, stdin) != NULL)) {
+  while ((running == 1) && (alarm(READ_TIMEOUT_SEC), fgets(cmd, CMD_MAX_SIZE, stdin) != NULL)) {
     cmd[CMD_MAX_SIZE-1] = 0;
     j = strlen(cmd);
     for (i=0; i<j; i++) {

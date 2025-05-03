@@ -1,3 +1,9 @@
+fakepop (9) unstable; urgency=low
+
+  * Added a 10 minute timeout to inactive connections
+
+ -- Chris Frey <cdfrey@foursquare.net>  Fri, 02 May 2025 22:48:25 -0400
+
 fakepop (8) unstable; urgency=low
 
   * Bug fixes and very slight modernizing
