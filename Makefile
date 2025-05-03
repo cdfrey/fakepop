@@ -14,6 +14,7 @@ distclean: clean
 	rm -f fakepop install.tgz fakepop-src.tgz
 
 fakepop: fakepop.o header.o id.o msg.o retrieve.o
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 dirs:
 	install -d -o root -g root -m 0755 $(DESTDIR)/etc/fakepop
